@@ -79,16 +79,17 @@ a<- mpg %>%
   mutate(manufacturer = str_to_title(manufacturer)) %>% 
   tally()
 p<- ggplot(data= a, aes(x= reorder(manufacturer, n), y=n, fill= manufacturer))
-p <- p + geom_bar(stat='identity')
+p <- p + geom_bar(stat='identity') + coord_flip()
 p
 ```
+Dodge produced the most cars and Lincoln produced the least cars
 
 # e4
 ```{r}
 boxplot(mpg$hwy~mpg$cyl)
 ```
 
-The less number of cylinders the higher the miles per gallon
+The lesser number of cylinders the higher the miles per gallon
 
 # e5
 ```{r}
@@ -97,3 +98,5 @@ n <- mpg %>%
 m= cor(n)
 corrplot(m, method = 'number', order = 'AOE', type = 'lower')
 ```
+Positive correlations: (display~year) (cyl~year) (cyl~displ) (hwy~cty)
+Negative correlations: (cty~year) (hwy~year) (cty~displ) (hwy~displ) (cty~ctl) (hwy~cyl)
