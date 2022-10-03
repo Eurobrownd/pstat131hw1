@@ -20,6 +20,42 @@ library(ISLR)
 # q1
 Supervised learning is when we know the response so we are able to  assess how
 fit the models are for the predictors and adjust which model to use for the data
+Unsupervised learning is when algorithms are given unlabeled data sets to determine
+patterns in data sets without human intervention
 
 # q2
-Regression models are used for 
+Regression models are used for modeling quantitative variables and classification 
+models are used for modeling categorical values. Regression models are used to
+model relationship between dependent and independent variables. Classification models
+are used to assign data into different categories.
+
+# q3
+For regression ML problems, means squared error and adjusted r squared can be used
+as metrics for model evaluation. For classification ML problems, accuracy,precision,
+and the Bayes Classifier are metric that could be used for model evaluation
+
+# q4
+Descriptive models are models that show a trend in the data
+Predictive models are models that predict Y with the least error
+Inferential models are models that describe relationships between response and predictor
+variables
+
+# q5
+Mechanistic models uses previous known information to develop a model for prediction.
+For Empirically-driven models, you gather information from experimenting and then
+make a model for prediction. They are similar in that they are both models for
+predicting, just the method of predicting is different. In general, empircally-driven models
+are easier to understand because there are no assumptions made about f and from the large
+amount of observations required, the model becomes much more flexible as well as being able
+to closer match the true f. Bias variance trade off is different for the models as the model with
+less flexible model(mechanistic) tends to have high bias and low variance where a more flexible model(empirically-driven)
+tends to have low bias and high variance.
+
+# q6
+The first question is predictive as given a voters descriptions, we use the data to predict whom
+they will vote for
+The second question is inferential as we are trying to establish if having a personal contact
+with the candidate is associated with the likelihood of support for another candidate
+
+# Exploratory Data Analysis
+
