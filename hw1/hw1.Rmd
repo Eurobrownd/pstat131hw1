@@ -94,9 +94,12 @@ The lesser number of cylinders the higher the miles per gallon
 # e5
 ```{r}
 n <- mpg %>% 
-  select(displ, year, cyl, cty, hwy)
+  select_if(is.numeric)
 m= cor(n)
 corrplot(m, method = 'number', order = 'AOE', type = 'lower')
 ```
-Positive correlations: (display~year) (cyl~year) (cyl~displ) (hwy~cty)
-Negative correlations: (cty~year) (hwy~year) (cty~displ) (hwy~displ) (cty~ctl) (hwy~cyl)
+Positive correlations: (displ~year) (cyl~year) (cyl~displ) (hwy~cty)
+Negative correlations: (cty~year) (hwy~year) (cty~displ) (hwy~displ) (cty~cyl) (hwy~cyl)
+
+These relationships make sense as higher engine displacement means higher number of cylinders.
+Higher highway mileage means higher city mileage. etc...
