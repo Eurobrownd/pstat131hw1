@@ -74,7 +74,13 @@ the highway miles per gallon, the higher the city miles per gallon
 
 # e3
 ```{r}
-ggplot(data=mpg,aes(x= reorder(manufacturer)))
+a<- mpg %>% 
+  group_by(manufacturer) %>% 
+  mutate(manufacturer = str_to_title(manufacturer)) %>% 
+  tally()
+p<- ggplot(data= a, aes(x= reorder(manufacturer, n), y=n, fill= manufacturer))
+p <- p + geom_bar(stat='identity')
+p
 ```
 
 # e4
@@ -82,3 +88,12 @@ ggplot(data=mpg,aes(x= reorder(manufacturer)))
 boxplot(mpg$hwy~mpg$cyl)
 ```
 
+The less number of cylinders the higher the miles per gallon
+
+# e5
+```{r}
+n <- mpg %>% 
+  select(displ, year, cyl, cty, hwy)
+m= cor(n)
+corrplot(m, method = 'number', order = 'AOE', type = 'lower')
+```
