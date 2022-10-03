@@ -59,3 +59,26 @@ with the candidate is associated with the likelihood of support for another cand
 
 # Exploratory Data Analysis
 
+# e1
+```{r}
+hist(mpg$hwy)
+```
+The histogram is right skewed with an average of about 20-30 miles per gallon for observed data points
+
+# e2
+```{r}
+plot(mpg$hwy, mpg$cty)
+```
+There is a positive linear relationship between hwy and cty as in that the higher
+the highway miles per gallon, the higher the city miles per gallon
+
+# e3
+```{r}
+ggplot(data=mpg,aes(x= reorder(manufacturer)))
+```
+
+# e4
+```{r}
+boxplot(mpg$hwy~mpg$cyl)
+```
+
